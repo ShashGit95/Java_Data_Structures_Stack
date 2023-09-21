@@ -105,7 +105,9 @@ class Demo {
     System.out.println(Arrays.toString(s1.toArray()));
     System.out.println();
     System.out.println(s1.toString());
+    System.out.println(s1);
     System.out.println();
+
 
 
 

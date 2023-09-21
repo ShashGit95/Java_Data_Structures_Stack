@@ -1,3 +1,4 @@
+import java.util.*;
 class Stack{
     private int[] dataArray;
 
@@ -50,8 +51,6 @@ class Stack{
     public int size(){
         return dataArray.length;
     }
-
-
     public boolean contains(int data){
         for(int number : dataArray){
             if(data == number){
@@ -59,6 +58,14 @@ class Stack{
             }
         }
         return false;
+    }
+
+    public int[] toArray(){
+        int[] tempArray = new int[dataArray.length];
+        for(int i =0; i< tempArray.length; i++){
+            tempArray[i] = dataArray[i];
+        }
+        return tempArray;
     }
 
 
@@ -69,7 +76,9 @@ class Demo {
     Stack s1 = new Stack();
     boolean isExist;
     s1.printStack();
+    System.out.println();
     System.out.println("Size of the stack "+s1.size());
+    System.out.println();
 
     s1.push(10);
     s1.push(20);
@@ -77,14 +86,21 @@ class Demo {
     s1.push(40);
     s1.push(50);
     s1.printStack();
+    System.out.println();
     System.out.println("Size of the stack "+s1.size());
     isExist = s1.contains(40);
+    System.out.println();
     System.out.println("Contains 40 : "+isExist);
+    System.out.println();
+    System.out.println(Arrays.toString(s1.toArray()));
+    System.out.println();
 
 
     s1.pop();
     s1.printStack();
+    System.out.println();
     System.out.println("Size of the stack "+s1.size());
+    System.out.println();
     isExist = s1.contains(90);
     System.out.println("Contains 90 : "+isExist);
 

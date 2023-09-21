@@ -74,7 +74,7 @@ class Stack{
             list += dataArray[i]+", ";
         }
         list += "\b\b]";
-        return list;
+        return size() >0 ? list : "[Empty]";
     }
 
 
@@ -85,6 +85,7 @@ class Demo {
     Stack s1 = new Stack();
     boolean isExist;
     s1.printStack();
+    System.out.println(s1.toString());
     System.out.println();
     System.out.println("Size of the stack "+s1.size());
     System.out.println();
@@ -103,7 +104,7 @@ class Demo {
     System.out.println();
     System.out.println(Arrays.toString(s1.toArray()));
     System.out.println();
-    s1.toString();
+    System.out.println(s1.toString());
     System.out.println();
 
 

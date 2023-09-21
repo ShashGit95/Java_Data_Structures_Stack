@@ -2,7 +2,7 @@ class Stack{
     private int[] dataArray;
 
     Stack(){
-        dataArray = new int [1];
+        dataArray = new int [0];
     }
     public void push(int data){
         extendArray();
@@ -10,8 +10,8 @@ class Stack{
 
     }
     private void extendArray(){
-        int[] tempDataArray = new int[dataArray.length];
-        for(int i=0; i< tempDataArray.length; i++){
+        int[] tempDataArray = new int[dataArray.length+1];
+        for(int i=0; i< dataArray.length; i++){
             tempDataArray[i] = dataArray[i];
 
         }

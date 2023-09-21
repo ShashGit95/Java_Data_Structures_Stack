@@ -21,7 +21,7 @@ class Stack{
 
     public void printStack(){
         if(dataArray.length>0) {
-            System.out.print("[ ");
+            System.out.print("[");
             for (int i = dataArray.length - 1; i >= 0; i--) {
                 System.out.print(dataArray[i] + ", ");
             }
@@ -63,9 +63,18 @@ class Stack{
     public int[] toArray(){
         int[] tempArray = new int[dataArray.length];
         for(int i =0; i< tempArray.length; i++){
-            tempArray[i] = dataArray[i];
+            tempArray[i] = dataArray[dataArray.length-1-i];
         }
         return tempArray;
+    }
+
+    public String toString(){
+        String list = "[";
+        for(int i = dataArray.length-1; i>=0; i--){
+            list += dataArray[i]+", ";
+        }
+        list += "\b\b]";
+        return list;
     }
 
 
@@ -94,6 +103,10 @@ class Demo {
     System.out.println();
     System.out.println(Arrays.toString(s1.toArray()));
     System.out.println();
+    s1.toString();
+    System.out.println();
+
+
 
 
     s1.pop();

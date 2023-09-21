@@ -52,11 +52,22 @@ class Stack{
     }
 
 
+    public boolean contains(int data){
+        for(int number : dataArray){
+            if(data == number){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 }
 
 class Demo {
     public static void main(String[] args) {
     Stack s1 = new Stack();
+    boolean isExist;
     s1.printStack();
     System.out.println("Size of the stack "+s1.size());
 
@@ -67,10 +78,15 @@ class Demo {
     s1.push(50);
     s1.printStack();
     System.out.println("Size of the stack "+s1.size());
+    isExist = s1.contains(40);
+    System.out.println("Contains 40 : "+isExist);
+
 
     s1.pop();
     s1.printStack();
     System.out.println("Size of the stack "+s1.size());
+    isExist = s1.contains(90);
+    System.out.println("Contains 90 : "+isExist);
 
     }
 }

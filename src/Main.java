@@ -18,6 +18,12 @@ class Stack{
         dataArray = tempDataArray;
     }
 
+    public void printStack(){
+        for(int i = dataArray.length-1; i>=0; i--){
+            System.out.println(dataArray[i]);
+        }
+    }
+
 
 }
 
@@ -29,5 +35,10 @@ class Demo {
     s1.push(30);
     s1.push(40);
     s1.push(50);
+    s1.printStack();
+
+
+
+
     }
 }

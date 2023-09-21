@@ -19,8 +19,28 @@ class Stack{
     }
 
     public void printStack(){
+        System.out.print("[ ");
         for(int i = dataArray.length-1; i>=0; i--){
-            System.out.println(dataArray[i]);
+            System.out.print(dataArray[i]+", ");
+        }
+        System.out.println("\b\b]");
+    }
+
+    public void pop(){
+        shortArray();
+
+    }
+
+    public void shortArray(){
+        if(dataArray.length>0) {
+            int[] temDataArray = new int[dataArray.length - 1];
+            for (int i = 0; i < temDataArray.length; i++) {
+                temDataArray[i] = dataArray[i];
+            }
+            dataArray = temDataArray;
+
+        }else{
+            System.out.println("Stack is empty.");
         }
     }
 
@@ -37,8 +57,8 @@ class Demo {
     s1.push(50);
     s1.printStack();
 
-
-
+    s1.pop();
+    s1.printStack();
 
     }
 }

@@ -19,11 +19,15 @@ class Stack{
     }
 
     public void printStack(){
-        System.out.print("[ ");
-        for(int i = dataArray.length-1; i>=0; i--){
-            System.out.print(dataArray[i]+", ");
+        if(dataArray.length>0) {
+            System.out.print("[ ");
+            for (int i = dataArray.length - 1; i >= 0; i--) {
+                System.out.print(dataArray[i] + ", ");
+            }
+            System.out.println("\b\b]");
+        }else{
+            System.out.println("[empty]");
         }
-        System.out.println("\b\b]");
     }
 
     public void pop(){
@@ -43,6 +47,9 @@ class Stack{
             System.out.println("Stack is empty.");
         }
     }
+    public int size(){
+        return dataArray.length;
+    }
 
 
 }
@@ -50,15 +57,20 @@ class Stack{
 class Demo {
     public static void main(String[] args) {
     Stack s1 = new Stack();
+    s1.printStack();
+    System.out.println("Size of the stack "+s1.size());
+
     s1.push(10);
     s1.push(20);
     s1.push(30);
     s1.push(40);
     s1.push(50);
     s1.printStack();
+    System.out.println("Size of the stack "+s1.size());
 
     s1.pop();
     s1.printStack();
+    System.out.println("Size of the stack "+s1.size());
 
     }
 }
